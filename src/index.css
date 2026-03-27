@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+:root {
+  --background: 222 47% 5%;
+  --foreground: 210 40% 98%;
+  --card: 222 47% 8%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222 47% 8%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 263 70% 58%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 217 33% 17%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 55%;
+  --accent: 217 33% 17%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217 33% 17%;
+  --input: 217 33% 17%;
+  --ring: 263 70% 58%;
+
+  /* Neural network specific colors */
+  --neuron-input: 142 76% 36%;
+  --neuron-hidden: 263 70% 58%;
+  --neuron-output: 25 95% 53%;
+  --neuron-bias: 199 89% 48%;
+  --weight-positive: 142 76% 46%;
+  --weight-negative: 0 84% 60%;
+  --activation: 47 96% 53%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  margin: 0;
+  padding: 0;
+}
+
+/* Network canvas styling */
+.network-canvas {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--card)) 0%,
+    hsl(222 47% 6%) 100%
+  );
+}
+
+/* Neuron glow effects */
+.neuron-glow {
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes signal-flow {
+  0% {
+    stroke-dashoffset: 100%;
+  }
+  100% {
+    stroke-dashoffset: 0%;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.signal-animation {
+  stroke-dasharray: 100%;
+  animation: signal-flow 1s ease-out forwards;
+}
+
+/* Training progress animation */
+@keyframes training-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px hsl(var(--primary) / 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.8);
+  }
+}
+
+.training-active {
+  animation: training-glow 1s ease-in-out infinite;
+}
