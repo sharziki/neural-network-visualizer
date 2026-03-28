@@ -234,10 +234,13 @@ function App() {
   );
 
   return (
-    <div className="min-h-screen bg-[hsl(var(--background))] p-6">
+    <div className="min-h-screen bg-[hsl(var(--background))]">
+      {/* Header */}
+      <header className="border-b border-[hsl(var(--border))] bg-[hsl(var(--card))]">
+        <div className="max-w-7xl mx-auto px-6 py-6">
       <div className="max-w-[1600px] mx-auto space-y-6">
         {/* Header */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-6">
           <div className="p-2 rounded-lg bg-[hsl(var(--primary))] bg-opacity-20">
             <Brain className="w-8 h-8 text-[hsl(var(--primary))]" />
           </div>
