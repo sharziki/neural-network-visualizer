@@ -316,6 +316,18 @@ function App() {
             in real-time.
           </p>
         </div>
+        <footer className="mt-8 py-4 text-center text-xs text-[hsl(var(--muted-foreground))] border-t border-[hsl(var(--border))]">
+          Made by{' '}
+          <a 
+            href="https://github.com/sharziki" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-[hsl(var(--primary))] hover:underline"
+          >
+            Sharvil Saxena
+          </a>
+        </footer>
+
       </div>
     </div>
   );
